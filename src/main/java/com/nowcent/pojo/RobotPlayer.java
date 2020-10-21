@@ -42,6 +42,11 @@ public class RobotPlayer extends Player {
         Set<Integer> randomSet = new HashSet<>();
         while(randomSet.size() <= 3){
             randomSet.add(1 + new Random(System.currentTimeMillis()).nextInt(4));
+            try {
+                Thread.sleep(50);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
 
         for (Integer i : randomSet) {
@@ -59,7 +64,7 @@ public class RobotPlayer extends Player {
         });
 
         for (int i = 0; i < cards.length; i++) {
-            if(!cards[i].getFace().equals(skipFace[0])){
+            if(!cards[i].getFace().getFace().equals(skipFace[0])){
                 cards[i] = deckOfCards.dealCard();
             }
         }
@@ -75,7 +80,7 @@ public class RobotPlayer extends Player {
         });
 
         for (int i = 0; i < cards.length; i++) {
-            if(!cards[i].getFace().equals(skipFace[0])){
+            if(!cards[i].getFace().getFace().equals(skipFace[0])){
                 cards[i] = deckOfCards.dealCard();
             }
         }
@@ -92,7 +97,7 @@ public class RobotPlayer extends Player {
         });
 
         for (int i = 0; i < cards.length; i++) {
-            if(!cards[i].getFace().equals(skipFace[0])){
+            if(!cards[i].getFace().getFace().equals(skipFace[0])){
                 cards[i] = deckOfCards.dealCard();
             }
         }
@@ -108,7 +113,7 @@ public class RobotPlayer extends Player {
         });
 
         for (int i = 0; i < cards.length; i++) {
-            if(!cards[i].getFace().equals(skipFace[0])){
+            if(!cards[i].getFace().getFace().equals(skipFace[0])){
                 cards[i] = deckOfCards.dealCard();
             }
         }

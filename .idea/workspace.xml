@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="02e79ad7-638f-4c09-b639-f6727c7f9a9c" name="Default Changelist" comment="" />
+    <list default="true" id="02e79ad7-638f-4c09-b639-f6727c7f9a9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RobotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RobotPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameRuler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameRuler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +25,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -48,7 +54,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -65,15 +71,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -94,6 +98,9 @@
       <updated>1602775990681</updated>
       <workItem from="1602775991850" duration="2944000" />
       <workItem from="1603200687370" duration="22998000" />
+      <workItem from="1603256939688" duration="919000" />
+      <workItem from="1603257869071" duration="167000" />
+      <workItem from="1603295622498" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1603256857020</created>
@@ -109,6 +116,9 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
     <MESSAGE value="initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
   </component>
@@ -133,22 +143,30 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="323" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603256856176" />
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom" timestamp="1603256905572">
+    <state x="623" y="310" key="Github.ShareDialog" timestamp="1603256970856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603256905572" />
-    <state width="1493" height="261" key="GridCell.Tab.0.center" timestamp="1603256905572">
+    <state x="623" y="310" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1603256970856" />
+    <state x="525" y="110" key="Github.UntrackedFilesDialog" timestamp="1603256977293">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603256905572" />
-    <state width="1493" height="261" key="GridCell.Tab.0.left" timestamp="1603256905571">
+    <state x="525" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603256977293" />
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1603296339484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603256905571" />
-    <state width="1493" height="261" key="GridCell.Tab.0.right" timestamp="1603256905572">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1603296339484">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603256905572" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1603296339484">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1603296339484">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1603256905572">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -165,6 +183,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603256905572" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1603296044609">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603296044609" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603256860050">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

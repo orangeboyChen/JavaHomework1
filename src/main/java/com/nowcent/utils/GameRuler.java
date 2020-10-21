@@ -101,14 +101,14 @@ public class GameRuler {
 
 
     public static GameUtils.CardScore evaluate(Card[] cards){
-        if(isAFlush(cards)){
-            return GameUtils.CardScore.FLUSH;
-        }
-        else if(isFourOfAKind(cards)){
+        if(isFourOfAKind(cards)){
             return GameUtils.CardScore.FOUR_OF_A_KIND;
         }
         else if(isAFullHouse(cards)){
             return GameUtils.CardScore.FULL_HOUSE;
+        }
+        else if(isAFlush(cards)){
+            return GameUtils.CardScore.FLUSH;
         }
         else if(isStraight(cards)){
             return GameUtils.CardScore.STRAIGHT;
