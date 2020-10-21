@@ -57,6 +57,9 @@ public class RealPlayer extends Player {
             cards[cardIndex - 1] = deckOfCards.dealCard();
         }
         cardScore = evaluate(cards);
+        System.out.printf("替换后，你的牌是%s（%s）\n", Arrays.toString(cards), cardScore);
+        System.out.println("===");
+
     }
 
 }

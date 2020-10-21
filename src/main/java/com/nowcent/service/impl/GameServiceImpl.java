@@ -17,6 +17,7 @@ public class GameServiceImpl implements GameService {
     private final Player[] players;
     private final DeckOfCards deckOfCards;
     private final Player currentPlayer;
+    private int currentPlayerIndex = -1;
 
     private GameServiceImpl(GameServiceBuilder gameServiceBuilder){
         players = new Player[gameServiceBuilder.robotPlayerTotal + 1];
@@ -55,11 +56,17 @@ public class GameServiceImpl implements GameService {
     @Override
     public void initGame(){
         deckOfCards.shuffle();
-        players[0] = currentPlayer;
-        players[0].setCards(new Card[]{deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard()});
-        System.out.printf("你的牌是\n%s（%s）\n", Arrays.toString(players[0].getCards()), players[0].getCardScore());
+        Random r = new Random(System.currentTimeMillis());
+        currentPlayerIndex = r.nextInt(players.length);
 
-        for (int i = 1; i < players.length; i++) {
+        players[currentPlayerIndex] = currentPlayer;
+        currentPlayer.setCards(new Card[]{deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard()});
+        System.out.printf("你的牌是\n%s（%s）\n", Arrays.toString(currentPlayer.getCards()), currentPlayer.getCardScore());
+
+        for (int i = 0; i < players.length; i++) {
+            if(players[i] != null){
+                continue;
+            }
             players[i] = new RobotPlayer();
             players[i].setCards(new Card[]{deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard(), deckOfCards.dealCard()});
         }
@@ -68,19 +75,22 @@ public class GameServiceImpl implements GameService {
     }
 
     public void playOneGame(){
-        players[0].optimizeCards(deckOfCards);
-        System.out.printf("替换后，你的牌是%s（%s）\n", Arrays.toString(players[0].getCards()), players[0].getCardScore());
-        System.out.println("===");
-
-        for (int i = 1; i < players.length; i++) {
-            System.out.printf("玩家%d正在抽牌\n", i + 1);
+        System.out.println("\n===游戏开始===");
+        for (int i = 0; i < players.length; i++) {
+            if(i != currentPlayerIndex){
+                System.out.printf("玩家%d正在抽牌\n", i + 1);
+            }
+            else{
+                System.out.println("【到你的回合了】");
+            }
             players[i].optimizeCards(deckOfCards);
         }
 
-        int maxScore = players[0].getCardScore().getIndex();
+        int maxScore = currentPlayer.getCardScore().getIndex();
         System.out.println("===");
-        System.out.printf("你抽到了%s\n", players[0].getCardScore());
-        for (int i = 1; i < players.length; i++) {
+        System.out.printf("你抽到了%s\n", currentPlayer.getCardScore());
+        for (int i = 0; i < players.length; i++) {
+            if(i == currentPlayerIndex) continue;
             System.out.printf("玩家%d抽到了%s（%s）\n", (i + 1), Arrays.toString(players[i].getCards()), players[i].getCardScore());
             if(players[i].getCardScore().getIndex() >= maxScore){
                 maxScore = players[i].getCardScore().getIndex();

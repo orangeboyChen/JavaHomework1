@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="02e79ad7-638f-4c09-b639-f6727c7f9a9c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RobotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RobotPlayer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameRuler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameRuler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RealPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RealPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/service/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/service/impl/GameServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +98,7 @@
       <workItem from="1603200687370" duration="22998000" />
       <workItem from="1603256939688" duration="919000" />
       <workItem from="1603257869071" duration="167000" />
-      <workItem from="1603295622498" duration="726000" />
+      <workItem from="1603295622498" duration="1478000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1603256857020</created>
@@ -109,7 +107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603256857020</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="bugfix 修复了bug">
+      <created>1603296601541</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1603296601541</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -120,7 +125,8 @@
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
     <MESSAGE value="initial commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial commit" />
+    <MESSAGE value="bugfix 修复了bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix 修复了bug" />
   </component>
   <component name="WindowStateProjectService">
     <state x="523" y="0" key="#Auto_Import" timestamp="1603240696400">
@@ -139,10 +145,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="172" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603213844120" />
-    <state x="323" y="0" key="CommitChangelistDialog2" timestamp="1603256856176">
+    <state x="323" y="0" key="CommitChangelistDialog2" timestamp="1603296600960">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="323" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603256856176" />
+    <state x="323" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1603296600960" />
     <state x="623" y="310" key="Github.ShareDialog" timestamp="1603256970856">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -151,22 +157,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="525" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603256977293" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1603296339484">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1603297092391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1603296339484">
+    <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603297092391" />
+    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1603297092390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1603296339484">
+    <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603297092390" />
+    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1603297092390">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1603296339484">
+    <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603297092390" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1603297092391">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603296339484" />
+    <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603297092391" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1603256905572">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -187,10 +193,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603296044609" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603256860050">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603296602979">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603256860050" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1603296602979" />
     <state x="306" y="148" width="923" height="640" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1603247547722">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
