@@ -20,9 +20,10 @@ public class Application {
         GameService gameService = new GameServiceImpl.GameServiceBuilder(deckOfCards, new RealPlayer())
                 .robotPlayerTotal(3)
                 .gameTotal(20)
+                .changeCardType(GameServiceImpl.CHANGE_CARD_TYPE_DEFAULT)
                 .build();
 
-        //初始化游戏
+        //开始游戏
         gameService.play();
 
     }

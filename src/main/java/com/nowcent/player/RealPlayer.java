@@ -153,7 +153,7 @@ public class RealPlayer extends Player {
         }
 
         //抽卡
-        changeCardFromOthers(targetPlayer, replaceTargetCardIndex, replaceOriginCardIndex);
+        changeCard(targetPlayer, replaceTargetCardIndex, replaceOriginCardIndex);
 
         //重新评估分数
         cardScore = evaluate(cards);
@@ -163,14 +163,14 @@ public class RealPlayer extends Player {
     }
 
     @Override
-    public void passiveChangeCardToOthers(int[] targetCardIndexes, Player originPlayer, int[] originCardIndexes) {
+    public void passiveChangeCard(int[] targetCardIndexes, Player originPlayer, int[] originCardIndexes) {
         Card[] changeCards = new Card[targetCardIndexes.length];
         for (int i = 0; i < changeCards.length; i++) {
             changeCards[i] = cards[targetCardIndexes[i]];
         }
         System.out.println("玩家" + ((RobotPlayer)originPlayer).getIndex() + "抽走了你的" + Arrays.toString(changeCards) + "（" + originCardIndexes.length + "张）。");
 
-        super.passiveChangeCardToOthers(targetCardIndexes, originPlayer, originCardIndexes);
+        super.passiveChangeCard(targetCardIndexes, originPlayer, originCardIndexes);
         System.out.println("你当前的牌是" + Arrays.toString(cards) + "（" + cardScore + "）");
 
     }

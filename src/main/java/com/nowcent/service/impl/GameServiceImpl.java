@@ -21,28 +21,9 @@ public class GameServiceImpl implements GameService {
     private final Player currentPlayer;
     private int gameTotal;
 
-    private GameServiceImpl(GameServiceBuilder gameServiceBuilder){
-        robotPlayerTotal = gameServiceBuilder.robotPlayerTotal;
-        deckOfCards = gameServiceBuilder.deckOfCards;
-        currentPlayer = gameServiceBuilder.currentPlayer;
-        gameTotal = gameServiceBuilder.gameTotal;
-
-        players = new Player[robotPlayerTotal + 1];
-        players[0] = currentPlayer;
-        for (int i = 1; i < players.length; i++) {
-            players[i] = new RobotPlayer(i + 1);
-        }
-    }
-
-    private void shufflePosition(){
-        for ( int first = 0; first < players.length; first++ ) {
-            int second = new Random().nextInt(players.length);
-            Player temp = players[first];
-            players[first] = players[second];
-            players[second] = temp;
-        }
-    }
-
+    public final static int CHANGE_CARD_TYPE_DEFAULT = Player.CHANGE_CARD_TYPE_DEFAULT;
+    public final static int CHANGE_CARD_TYPE_SINGLE = Player.CHANGE_CARD_TYPE_SINGLE;
+    public final static int CHANGE_CARD_TYPE_ONCE = Player.CHANGE_CARD_TYPE_ONCE;
 
     /**
      * 构造者模式
@@ -53,6 +34,8 @@ public class GameServiceImpl implements GameService {
         private final DeckOfCards deckOfCards;
         private final Player currentPlayer;
         private int gameTotal = 1;
+        private int changeCardType = Player.CHANGE_CARD_TYPE_DEFAULT;
+
 
 
         public GameServiceBuilder robotPlayerTotal(int robotPlayerTotal){
@@ -82,6 +65,11 @@ public class GameServiceImpl implements GameService {
             this.currentPlayer = currentPlayer;
         }
 
+        public GameServiceBuilder changeCardType(int type){
+            changeCardType = type;
+            return this;
+        }
+
         public GameService build(){
             return new GameServiceImpl(this);
         }
@@ -90,10 +78,41 @@ public class GameServiceImpl implements GameService {
 
 
 
+    private GameServiceImpl(GameServiceBuilder gameServiceBuilder){
+        robotPlayerTotal = gameServiceBuilder.robotPlayerTotal;
+        deckOfCards = gameServiceBuilder.deckOfCards;
+        currentPlayer = gameServiceBuilder.currentPlayer;
+        gameTotal = gameServiceBuilder.gameTotal;
+        Player.setChangeCardType(gameServiceBuilder.changeCardType);
+
+        players = new Player[robotPlayerTotal + 1];
+        players[0] = currentPlayer;
+        for (int i = 1; i < players.length; i++) {
+            players[i] = new RobotPlayer(i + 1);
+        }
+    }
+
+
+
+
+
+    /**
+     * 换位置
+     */
+    private void shufflePositions(){
+        for ( int first = 0; first < players.length; first++ ) {
+            int second = new Random().nextInt(players.length);
+            Player temp = players[first];
+            players[first] = players[second];
+            players[second] = temp;
+        }
+    }
+
+
     @Override
     public void initGame(){
         //随机化玩家座位
-        shufflePosition();
+        shufflePositions();
 
         //洗牌
         deckOfCards.shuffle();

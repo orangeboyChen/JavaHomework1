@@ -1,12 +1,9 @@
 package com.nowcent.player;
 
-import com.nowcent.service.DeckOfCards;
-import com.nowcent.utils.GameRuler;
 import com.nowcent.utils.GameUtils;
 
 import java.util.*;
 
-import static com.nowcent.utils.GameRuler.CardScore.*;
 import static com.nowcent.utils.GameRuler.evaluate;
 
 /**
@@ -15,7 +12,7 @@ import static com.nowcent.utils.GameRuler.evaluate;
  * @date 2020/10/21 8:31
  */
 public class RobotPlayer extends Player {
-    private int index;
+    private final int index;
     public RobotPlayer(int index){
         this.index = index;
     }
@@ -64,7 +61,7 @@ public class RobotPlayer extends Player {
         int[] targetIndexes = getRandomIndexes(3);
 
         //抽牌
-        changeCardFromOthers(getRandomPlayer(players, currentPlayerIndex), targetIndexes, originIndexes);
+        changeCard(getRandomPlayer(players, currentPlayerIndex), targetIndexes, originIndexes);
     }
 
     /**
@@ -85,7 +82,7 @@ public class RobotPlayer extends Player {
         int[] originIndexes = getIndexesFromSkipFaces(skipFace[0]);
 
         //抽牌
-        changeCardFromOthers(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
+        changeCard(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
 
 
     }
@@ -108,7 +105,7 @@ public class RobotPlayer extends Player {
         int[] originIndexes = getIndexesFromSkipFaces(skipFace[0]);
 
         //抽牌
-        changeCardFromOthers(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
+        changeCard(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
 
     }
 
@@ -132,7 +129,7 @@ public class RobotPlayer extends Player {
         int[] originIndexes = getIndexesFromSkipFaces(skipFace[0]);
 
         //抽牌
-        changeCardFromOthers(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
+        changeCard(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
 
     }
 
@@ -154,7 +151,7 @@ public class RobotPlayer extends Player {
         int[] originIndexes = getIndexesFromSkipFaces(skipFace[0]);
 
         //抽牌
-        changeCardFromOthers(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
+        changeCard(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
     }
 
     private Player getRandomPlayer(Player[] players, int currentPlayerIndex){
@@ -190,8 +187,13 @@ public class RobotPlayer extends Player {
             }
         }
         return originIndexes.stream().mapToInt(Integer::intValue).toArray();
-
     }
 
-
+    @Override
+    public void changeCard(Player targetPlayer, int[] targetCardIndexes, int[] originCardIndexes) {
+        if(targetPlayer instanceof RobotPlayer){
+            System.out.println("玩家" + index + "从玩家" + ((RobotPlayer) targetPlayer).getIndex() + "抽走了" + targetCardIndexes.length + "张牌");
+        }
+        super.changeCard(targetPlayer, targetCardIndexes, originCardIndexes);
+    }
 }

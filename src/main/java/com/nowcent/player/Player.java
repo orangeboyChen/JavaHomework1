@@ -1,13 +1,11 @@
 package com.nowcent.player;
 
 import com.nowcent.pojo.Card;
-import com.nowcent.service.DeckOfCards;
 import com.nowcent.utils.GameRuler;
-import com.nowcent.utils.GameUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Random;
 import java.util.Set;
 
 import static com.nowcent.utils.GameRuler.evaluate;
@@ -21,6 +19,14 @@ public abstract class Player {
     protected Card[] cards;
     protected GameRuler.CardScore cardScore;
     private int winCount = 0;
+
+    public final static int CHANGE_CARD_TYPE_DEFAULT = 0;
+    public final static int CHANGE_CARD_TYPE_SINGLE = 1;
+    public final static int CHANGE_CARD_TYPE_ONCE = 2;
+
+    private static int changeCardType = CHANGE_CARD_TYPE_DEFAULT;
+
+
 
     public void winCountIncrement(){
         winCount++;
@@ -43,23 +49,33 @@ public abstract class Player {
      */
     public abstract void optimizeCards(Player[] players, int currentPlayerIndex);
 
-    public void changeCardFromOthers(Player targetPlayer, int[] targetCardIndex, int[] originCardIndex) {
-        targetPlayer.passiveChangeCardToOthers(targetCardIndex, this, originCardIndex);
+    /**
+     * 主动换卡
+     * @param targetPlayer 被换卡方
+     * @param targetCardIndexes 被换卡方的索引
+     * @param originCardIndexes 换卡方的索引
+     */
+    public void changeCard(Player targetPlayer, int[] targetCardIndexes, int[] originCardIndexes) {
+        targetPlayer.passiveChangeCard(targetCardIndexes, this, originCardIndexes);
         this.cardScore = evaluate(cards);
     }
 
-    public void passiveChangeCardToOthers(int[] targetCardIndexes, Player originPlayer, int[] originCardIndexes) {
+    /**
+     * 被动换卡
+     * @param targetCardIndexes 被换卡方的索引
+     * @param originPlayer 要换卡的索引
+     * @param originCardIndexes 换卡方的索引
+     */
+    public void passiveChangeCard(int[] targetCardIndexes, Player originPlayer, int[] originCardIndexes) {
         try {
-            Card[] originCard = originPlayer.getCards(originCardIndexes);
-            Card[] targetCard = this.getCards(targetCardIndexes);
-            originPlayer.setCards(targetCard, originCardIndexes);
-            this.setCards(originCard, targetCardIndexes);
+            Card[] originCards = originPlayer.getCards(originCardIndexes);
+            Card[] targetCards = this.getCards(targetCardIndexes);
+            originPlayer.setCards(targetCards, originCardIndexes);
+            this.setCards(originCards, targetCardIndexes);
             this.cardScore = evaluate(cards);
-
         } catch (CloneNotSupportedException e) {
             e.printStackTrace();
         }
-
     }
     public GameRuler.CardScore getCardScore() {
         return cardScore;
@@ -75,10 +91,20 @@ public abstract class Player {
 
     }
 
+    /**
+     * 获取全部卡片
+     * @return 全部卡片
+     */
     public Card[] getCards() {
         return cards;
     }
 
+    /**
+     * 从索引获得卡片
+     * @param indexes 索引数组
+     * @return 卡片
+     * @throws CloneNotSupportedException 卡片无法克隆错误
+     */
     public Card[] getCards(int[] indexes) throws CloneNotSupportedException {
         Set<Integer> set = new HashSet<>();
         Arrays.stream(indexes).forEach(set::add);
@@ -93,7 +119,13 @@ public abstract class Player {
         return cards;
     }
 
-    public void setCards(Card[] cards, int[] indexes) throws CloneNotSupportedException {
+    /**
+     * 设置部分卡片
+     * 注意：卡片数组索引与索引数组索引一一对应
+     * @param cards 要设置的卡片
+     * @param indexes 要设置的索引
+     */
+    public void setCards(Card[] cards, int[] indexes) {
         if(indexes.length != cards.length){
             throw new RuntimeException("替换卡片数组长度与替换卡牌索引长度不一致");
         }
@@ -109,4 +141,7 @@ public abstract class Player {
         }
     }
 
+    public static void setChangeCardType(int changeCardType) {
+        Player.changeCardType = changeCardType;
+    }
 }
