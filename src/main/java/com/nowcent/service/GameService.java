@@ -6,5 +6,8 @@ package com.nowcent.service;
  * @date 2020/10/20 23:35
  */
 public interface GameService {
+    /**
+     * 初始化游戏
+     */
     void initGame();
 }

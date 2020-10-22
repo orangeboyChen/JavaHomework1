@@ -1,6 +1,8 @@
 package com.nowcent.utils;
 
 import com.nowcent.pojo.Card;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,25 +14,11 @@ import java.util.stream.Collectors;
  */
 public class GameUtils {
 
-    public enum CardScore{
-        HIGH(0),
-        ONE_PAIR(1),
-        TWO_PAIR(2),
-        THREE_OF_A_KIND(3),
-        STRAIGHT(4),
-        FULL_HOUSE(5),
-        FOUR_OF_A_KIND(6),
-        FLUSH(7);
-
-        private int index;
-        CardScore(int index){
-            this.index = index;
-        }
-        public int getIndex() {
-            return index;
-        }
-    }
-
+    /**
+     * 把卡牌的点数转化为Map，value为牌的数量
+     * @param cards 卡牌
+     * @return Map
+     */
     public static Map<String, Integer> cardFaceArrayToMap(Card[] cards){
         Map<String, Integer> map = new HashMap<>(cards.length);
         for (Card card : cards) {
@@ -43,6 +31,11 @@ public class GameUtils {
         return map;
     }
 
+    /**
+     * 把卡牌的花色转化为Map，value为牌的数量
+     * @param cards 卡牌
+     * @return Map
+     */
     public static Map<String, Integer> cardSuitArrayToMap(Card[] cards){
         Map<String, Integer> map = new HashMap<>(cards.length);
         for (Card card : cards) {

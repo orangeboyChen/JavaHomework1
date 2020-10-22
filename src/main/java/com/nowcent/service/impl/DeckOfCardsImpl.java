@@ -25,6 +25,9 @@ public class DeckOfCardsImpl implements DeckOfCards {
 //    private final String[] faces = { "Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King" };
 //    private final String[] suits = { "Hearts", "Diamonds", "Clubs", "Spades" };
 
+    /**
+     * 单例模式
+     */
     private static final DeckOfCardsImpl deckOfCards = new DeckOfCardsImpl();
 
     private DeckOfCardsImpl() {

@@ -1,6 +1,8 @@
-package com.nowcent.pojo;
+package com.nowcent.player;
 
+import com.nowcent.pojo.Card;
 import com.nowcent.service.DeckOfCards;
+import com.nowcent.utils.GameRuler;
 import com.nowcent.utils.GameUtils;
 
 import static com.nowcent.utils.GameRuler.evaluate;
@@ -12,15 +14,25 @@ import static com.nowcent.utils.GameRuler.evaluate;
  */
 public abstract class Player {
     protected Card[] cards;
-    protected GameUtils.CardScore cardScore;
+    protected GameRuler.CardScore cardScore;
 
+    /**
+     * 最大替换牌数
+     */
+    protected final int MAX_REPLACE_CARDS_NUMBER = 3;
+
+
+    /**
+     * 优化卡牌分数，从牌堆抽牌以替换
+     * @param deckOfCards 牌堆
+     */
     public abstract void optimizeCards(DeckOfCards deckOfCards);
 
-    public GameUtils.CardScore getCardScore() {
+    public GameRuler.CardScore getCardScore() {
         return cardScore;
     }
 
-    public void setCardScore(GameUtils.CardScore cardScore) {
+    public void setCardScore(GameRuler.CardScore cardScore) {
         this.cardScore = cardScore;
     }
 

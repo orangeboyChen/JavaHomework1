@@ -1,10 +1,12 @@
-package com.nowcent.pojo;
+package com.nowcent.player;
 
 import com.nowcent.service.DeckOfCards;
+import com.nowcent.utils.GameRuler;
 import com.nowcent.utils.GameUtils;
 
 import java.util.*;
 
+import static com.nowcent.utils.GameRuler.CardScore.*;
 import static com.nowcent.utils.GameRuler.evaluate;
 
 /**
@@ -15,6 +17,7 @@ import static com.nowcent.utils.GameRuler.evaluate;
 public class RobotPlayer extends Player {
     @Override
     public void optimizeCards(DeckOfCards deckOfCards) {
+        //根据牌的形式，选择不同的优化方法
         switch(cardScore){
             case HIGH:
                 optimizeHighCards(deckOfCards);
@@ -38,7 +41,13 @@ public class RobotPlayer extends Player {
 
     }
 
+    /**
+     * 优化HIGH牌
+     * 如果是HIGH牌，则随机抽掉3张
+     * @param deckOfCards 牌堆
+     */
     private void optimizeHighCards(DeckOfCards deckOfCards){
+        //从0-4随机选3个数字
         Set<Integer> randomSet = new HashSet<>();
         while(randomSet.size() <= 3){
             randomSet.add(1 + new Random(System.currentTimeMillis()).nextInt(4));
@@ -54,6 +63,11 @@ public class RobotPlayer extends Player {
         }
     }
 
+    /**
+     * 优化一对牌
+     * 抽掉另外三张
+     * @param deckOfCards 牌堆
+     */
     private void optimizeOnePairCards(DeckOfCards deckOfCards){
         Map<String, Integer> cardFaceMap = GameUtils.cardFaceArrayToMap(cards);
         final String[] skipFace = new String[1];
@@ -70,6 +84,11 @@ public class RobotPlayer extends Player {
         }
     }
 
+    /**
+     * 优化两对牌
+     * 抽掉最后一张异常牌
+     * @param deckOfCards 牌堆
+     */
     private void optimizeTwoPairsCards(DeckOfCards deckOfCards){
         Map<String, Integer> cardFaceMap = GameUtils.cardFaceArrayToMap(cards);
         final String[] skipFace = new String[1];
@@ -87,6 +106,11 @@ public class RobotPlayer extends Player {
 
     }
 
+    /**
+     * 优化三条牌
+     * 抽另外两张牌
+     * @param deckOfCards 牌堆
+     */
     private void optimizeThreeOfAKindCards(DeckOfCards deckOfCards){
         Map<String, Integer> cardFaceMap = GameUtils.cardFaceArrayToMap(cards);
         final String[] skipFace = new String[1];
@@ -103,6 +127,11 @@ public class RobotPlayer extends Player {
         }
     }
 
+    /**
+     * 优化四条牌
+     * 抽掉最后一张牌
+     * @param deckOfCards 牌堆
+     */
     private void optimizeFourOfAKindCards(DeckOfCards deckOfCards){
         Map<String, Integer> cardFaceMap = GameUtils.cardFaceArrayToMap(cards);
         final String[] skipFace = new String[1];

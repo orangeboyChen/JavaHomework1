@@ -1,6 +1,8 @@
 package com.nowcent.utils;
 
 import com.nowcent.pojo.Card;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -16,6 +18,29 @@ import static com.nowcent.utils.GameUtils.cardSuitArrayToMap;
  * @date 2020/10/21 12:53
  */
 public class GameRuler {
+    /**
+     * 牌的形式
+     */
+    @Getter
+    @AllArgsConstructor
+    public enum CardScore{
+        HIGH(0),
+        ONE_PAIR(1),
+        TWO_PAIR(2),
+        THREE_OF_A_KIND(3),
+        STRAIGHT(4),
+        FULL_HOUSE(5),
+        FOUR_OF_A_KIND(6),
+        FLUSH(7);
+
+        private int index;
+    }
+
+    /**
+     * 判断是否是一对
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isSinglePair(Card[] cards) {
         for (Integer integer : cardFaceArrayToMap(cards).values()) {
             if (integer >= 2) {
@@ -25,6 +50,11 @@ public class GameRuler {
         return false;
     }
 
+    /**
+     * 判断是否是两对
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isTwoPairs(Card[] cards) {
         int pairsCount = 0;
         for (Integer integer : cardFaceArrayToMap(cards).values()) {
@@ -41,6 +71,11 @@ public class GameRuler {
         return pairsCount >= 2;
     }
 
+    /**
+     * 判断是否是三条
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isThreeOfAKind(Card[] cards) {
         for (Integer integer : cardFaceArrayToMap(cards).values()) {
             if (integer >= 3) {
@@ -51,6 +86,11 @@ public class GameRuler {
 
     }
 
+    /**
+     * 判断是否是四条
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isFourOfAKind(Card[] cards) {
         for (Integer integer : cardFaceArrayToMap(cards).values()) {
             if (integer >= 4) {
@@ -60,6 +100,11 @@ public class GameRuler {
         return false;
     }
 
+    /**
+     * 判断是否是同花
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isAFlush(Card[] cards) {
         for(Integer integer : cardSuitArrayToMap(cards).values()){
             if(integer >= 5){
@@ -69,6 +114,11 @@ public class GameRuler {
         return false;
     }
 
+    /**
+     * 判断是否是顺子
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isStraight(Card[] cards) {
         Card[] sortedCards = Arrays.stream(cards).sorted(Comparator.comparing(card -> card.getFace().getIndex())).collect(Collectors.toList()).toArray(new Card[1]);
         for (int i = 0; i < sortedCards.length - 4; i++) {
@@ -86,6 +136,11 @@ public class GameRuler {
         return false;
     }
 
+    /**
+     * 判断是否是葫芦
+     * @param cards 要判断的牌
+     * @return 结果
+     */
     public static boolean isAFullHouse(Card[] cards) {
         Map<String, Integer> map = cardFaceArrayToMap(cards);
         int flag = 0;
@@ -98,32 +153,35 @@ public class GameRuler {
         return flag >= 5;
     }
 
-
-
-    public static GameUtils.CardScore evaluate(Card[] cards){
+    /**
+     * 评估牌的质量
+     * @param cards 卡牌
+     * @return 牌形式枚举
+     */
+    public static CardScore evaluate(Card[] cards){
         if(isFourOfAKind(cards)){
-            return GameUtils.CardScore.FOUR_OF_A_KIND;
+            return CardScore.FOUR_OF_A_KIND;
         }
         else if(isAFullHouse(cards)){
-            return GameUtils.CardScore.FULL_HOUSE;
+            return CardScore.FULL_HOUSE;
         }
         else if(isAFlush(cards)){
-            return GameUtils.CardScore.FLUSH;
+            return CardScore.FLUSH;
         }
         else if(isStraight(cards)){
-            return GameUtils.CardScore.STRAIGHT;
+            return CardScore.STRAIGHT;
         }
         else if(isThreeOfAKind(cards)){
-            return GameUtils.CardScore.THREE_OF_A_KIND;
+            return CardScore.THREE_OF_A_KIND;
         }
         else if(isTwoPairs(cards)){
-            return GameUtils.CardScore.TWO_PAIR;
+            return CardScore.TWO_PAIR;
         }
         else if(isSinglePair(cards)){
-            return GameUtils.CardScore.ONE_PAIR;
+            return CardScore.ONE_PAIR;
         }
         else{
-            return GameUtils.CardScore.HIGH;
+            return CardScore.HIGH;
         }
     }
 

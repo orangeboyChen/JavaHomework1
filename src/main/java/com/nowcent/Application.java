@@ -1,12 +1,10 @@
 package com.nowcent;
 
-import com.nowcent.pojo.Card;
-import com.nowcent.pojo.RealPlayer;
+import com.nowcent.player.RealPlayer;
 import com.nowcent.service.DeckOfCards;
 import com.nowcent.service.GameService;
 import com.nowcent.service.impl.DeckOfCardsImpl;
 import com.nowcent.service.impl.GameServiceImpl;
-import com.nowcent.utils.GameRuler;
 
 /**
  * @author orangeboy
@@ -15,10 +13,15 @@ import com.nowcent.utils.GameRuler;
  */
 public class Application {
     public static void main(String[] args) {
+        //创建牌堆
         DeckOfCards deckOfCards = DeckOfCardsImpl.getDeckOfCards();
+
+        //创建游戏服务
         GameService gameService = new GameServiceImpl.GameServiceBuilder(deckOfCards, new RealPlayer())
-                .playerTotal(3)
+                .robotPlayerTotal(3)
                 .build();
+
+        //初始化游戏并开始
         gameService.initGame();
 
     }

@@ -1,6 +1,8 @@
 package com.nowcent.service;
 
 import com.nowcent.pojo.Card;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
 /**
  * @author orangeboy
@@ -19,6 +21,11 @@ public interface DeckOfCards {
      */
     Card dealCard();
 
+    /**
+     * 卡牌点数
+     */
+    @AllArgsConstructor
+    @Getter
     enum Face{
         A(1, "A"),
         NUM2(2, "2"),
@@ -36,20 +43,13 @@ public interface DeckOfCards {
 
         private int index;
         private String face;
-        Face(int index, String face){
-            this.index = index;
-            this.face = face;
-        }
-
-        public int getIndex() {
-            return index;
-        }
-
-        public String getFace() {
-            return face;
-        }
     }
 
+    /**
+     * 卡牌花色
+     */
+    @AllArgsConstructor
+    @Getter
     enum Suit{
         红桃(0),
         方块(1),
@@ -57,13 +57,6 @@ public interface DeckOfCards {
         黑桃(3);
 
         private int index;
-        Suit(int index){
-            this.index = index;
-        }
-
-        public int getIndex() {
-            return index;
-        }
     }
 
 

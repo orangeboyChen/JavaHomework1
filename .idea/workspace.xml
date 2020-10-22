@@ -3,11 +3,40 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="02e79ad7-638f-4c09-b639-f6727c7f9a9c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RealPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RealPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaHomework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/player/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RealPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/player/RealPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/pojo/RobotPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/player/RobotPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/service/DeckOfCards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/service/DeckOfCards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/service/GameService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/service/impl/DeckOfCardsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/service/impl/DeckOfCardsImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/service/impl/GameServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/service/impl/GameServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameRuler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameRuler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/nowcent/utils/GameUtils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +57,7 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.1\plugins\maven\lib\maven3" />
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA 2020.2.2\plugins\maven\lib\maven3" />
         <option name="userSettingsFile" value="C:\Environment\Maven\apache-maven-3.6.3\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -43,6 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="go.import.settings.migrated" value="true" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -52,7 +82,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -99,6 +129,9 @@
       <workItem from="1603256939688" duration="919000" />
       <workItem from="1603257869071" duration="167000" />
       <workItem from="1603295622498" duration="1478000" />
+      <workItem from="1603368937525" duration="469000" />
+      <workItem from="1603369485397" duration="134000" />
+      <workItem from="1603369694338" duration="2169000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1603256857020</created>
@@ -119,6 +152,18 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -157,21 +202,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="525" y="110" key="Github.UntrackedFilesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603256977293" />
-    <state width="1493" height="195" key="GridCell.Tab.0.bottom" timestamp="1603297092391">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1157" height="190" key="GridCell.Tab.0.bottom" timestamp="1603371622554">
+      <screen x="0" y="0" width="1200" height="760" />
     </state>
+    <state width="1157" height="190" key="GridCell.Tab.0.bottom/0.0.1200.760@0.0.1200.760" timestamp="1603371622554" />
     <state width="1493" height="195" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1603297092391" />
-    <state width="1493" height="195" key="GridCell.Tab.0.center" timestamp="1603297092390">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1157" height="190" key="GridCell.Tab.0.center" timestamp="1603371622539">
+      <screen x="0" y="0" width="1200" height="760" />
     </state>
+    <state width="1157" height="190" key="GridCell.Tab.0.center/0.0.1200.760@0.0.1200.760" timestamp="1603371622539" />
     <state width="1493" height="195" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1603297092390" />
-    <state width="1493" height="195" key="GridCell.Tab.0.left" timestamp="1603297092390">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1157" height="190" key="GridCell.Tab.0.left" timestamp="1603371622539">
+      <screen x="0" y="0" width="1200" height="760" />
     </state>
+    <state width="1157" height="190" key="GridCell.Tab.0.left/0.0.1200.760@0.0.1200.760" timestamp="1603371622539" />
     <state width="1493" height="195" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1603297092390" />
-    <state width="1493" height="195" key="GridCell.Tab.0.right" timestamp="1603297092391">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1157" height="190" key="GridCell.Tab.0.right" timestamp="1603371622539">
+      <screen x="0" y="0" width="1200" height="760" />
     </state>
+    <state width="1157" height="190" key="GridCell.Tab.0.right/0.0.1200.760@0.0.1200.760" timestamp="1603371622539" />
     <state width="1493" height="195" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1603297092391" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1603256905572">
       <screen x="0" y="0" width="1536" height="824" />
@@ -189,9 +238,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1603256905572" />
-    <state x="270" y="57" key="SettingsEditor" timestamp="1603296044609">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="204" y="50" key="SettingsEditor" timestamp="1603370665977">
+      <screen x="0" y="0" width="1200" height="760" />
     </state>
+    <state x="204" y="50" key="SettingsEditor/0.0.1200.760@0.0.1200.760" timestamp="1603370665977" />
     <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1603296044609" />
     <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1603296602979">
       <screen x="0" y="0" width="1536" height="824" />
