@@ -163,15 +163,16 @@ public class GameServiceImpl implements GameService {
                 System.out.printf("玩家%d正在抽牌\n", ((RobotPlayer) players[i]).getIndex());
             }
             else{
-                System.out.println("\n【到你的回合了】");
+                System.out.println("【到你的回合了】");
             }
 
-            players[i].optimizeCards(deckOfCards);
+            players[i].optimizeCards(players, i);
+            System.out.println("---");
         }
 
         //统计最大分数，展示每个玩家抽的牌
         int maxScore = -1;
-        System.out.println("===");
+        System.out.println("\n===本局统计===");
         for (int i = 0; i < players.length; i++) {
             if(players[i].getCardScore().getIndex() >= maxScore){
                 maxScore = players[i].getCardScore().getIndex();
@@ -196,11 +197,11 @@ public class GameServiceImpl implements GameService {
             }
 
         }
-        System.out.println("===");
+        System.out.println("============");
 
         //展示输赢结果
         if(currentPlayer.getCardScore().getIndex() >= maxScore){
-            System.out.println("你赢得了游戏");
+            System.out.println("你赢了");
         }
         else{
             System.out.println("你输了");

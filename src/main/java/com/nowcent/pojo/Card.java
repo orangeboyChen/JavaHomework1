@@ -11,7 +11,7 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
-public class Card {
+public class Card implements Cloneable {
     /**
      * 点数
      */
@@ -25,5 +25,10 @@ public class Card {
     @Override
     public String toString() {
         return suit.toString() + face.getFace();
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
