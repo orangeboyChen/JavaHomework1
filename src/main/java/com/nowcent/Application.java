@@ -19,10 +19,11 @@ public class Application {
         //创建游戏服务
         GameService gameService = new GameServiceImpl.GameServiceBuilder(deckOfCards, new RealPlayer())
                 .robotPlayerTotal(3)
+                .gameTotal(2)
                 .build();
 
-        //初始化游戏并开始
-        gameService.initGame();
+        //初始化游戏
+        gameService.play();
 
     }
 }

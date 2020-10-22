@@ -15,6 +15,15 @@ import static com.nowcent.utils.GameRuler.evaluate;
  * @date 2020/10/21 8:31
  */
 public class RobotPlayer extends Player {
+    private int index;
+    public RobotPlayer(int index){
+        this.index = index;
+    }
+
+    public int getIndex(){
+        return index;
+    }
+
     @Override
     public void optimizeCards(DeckOfCards deckOfCards) {
         //根据牌的形式，选择不同的优化方法

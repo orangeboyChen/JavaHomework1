@@ -15,6 +15,15 @@ import static com.nowcent.utils.GameRuler.evaluate;
 public abstract class Player {
     protected Card[] cards;
     protected GameRuler.CardScore cardScore;
+    private int winCount = 0;
+
+    public void winCountIncrement(){
+        winCount++;
+    }
+
+    public int getWinCount(){
+        return winCount;
+    }
 
     /**
      * 最大替换牌数
