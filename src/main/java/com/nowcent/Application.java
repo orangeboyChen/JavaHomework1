@@ -18,7 +18,7 @@ public class Application {
 
         //创建游戏服务
         GameService gameService = new GameServiceImpl.GameServiceBuilder(deckOfCards, new RealPlayer())
-                .robotPlayerTotal(3)
+                .robotPlayerTotal(9)
                 .gameTotal(20)
                 .changeCardType(GameServiceImpl.CHANGE_CARD_TYPE_DEFAULT)
                 .build();

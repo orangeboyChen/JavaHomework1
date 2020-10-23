@@ -87,7 +87,7 @@ public class RealPlayer extends Player {
 
             @Override
             public int getReplaceCardPlayerIndex(int currentPlayerIndex) {
-                System.out.print("\n输入要替换牌玩家的编号：");
+                System.out.print("\n输入要替换牌玩家的编号（输入0跳过）：");
                 int targetIndex = scanner.nextInt();
                 if(targetIndex > 0){
                     return targetIndex;
@@ -113,6 +113,13 @@ public class RealPlayer extends Player {
         int replaceCardPlayerIndex = input.getReplaceCardPlayerIndex(currentPlayerIndex);
         Player targetPlayer = null;
 
+        //啥都没输，就是跳过
+        if(replaceCardPlayerIndex == -1){
+            System.out.println("你选择了跳过");
+            return;
+        }
+
+
         for (Player player : players) {
             if (player instanceof RobotPlayer && ((RobotPlayer) player).getIndex() == replaceCardPlayerIndex) {
                 targetPlayer = player;
@@ -124,11 +131,6 @@ public class RealPlayer extends Player {
             throw new RuntimeException("玩家编号错误");
         }
 
-        //啥都没输，就是跳过
-        if(replaceCardPlayerIndex == -1){
-            System.out.println("你选择了跳过");
-            return;
-        }
 
         int[] replaceOriginCardIndex = input.getReplaceOriginCardIndex();
         //啥都没输，就是跳过
