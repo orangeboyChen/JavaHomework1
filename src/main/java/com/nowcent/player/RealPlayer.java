@@ -100,6 +100,9 @@ public class RealPlayer extends Player {
 
     @Override
     public void optimizeCards(Player[] players, int currentPlayerIndex) {
+        //展示手牌
+        System.out.println("你的牌是" + Arrays.toString(cards) + "（" + cardScore + "）");
+
         //遍历输出全部玩家
         System.out.print("全部玩家为：");
 
@@ -130,7 +133,6 @@ public class RealPlayer extends Player {
         if(targetPlayer == null){
             throw new RuntimeException("玩家编号错误");
         }
-
 
         int[] replaceOriginCardIndex = input.getReplaceOriginCardIndex();
         //啥都没输，就是跳过
