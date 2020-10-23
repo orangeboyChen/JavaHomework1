@@ -29,7 +29,7 @@ public class GameServiceImpl implements GameService {
      * 构造者模式
      */
     public static class GameServiceBuilder{
-        private final int BIGGEST_ROBOT_PLAYER_COUNT = 5;
+        private final int BIGGEST_ROBOT_PLAYER_COUNT = 9;
         private int robotPlayerTotal = 2;
         private final DeckOfCards deckOfCards;
         private final Player currentPlayer;

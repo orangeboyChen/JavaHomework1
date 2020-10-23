@@ -102,7 +102,14 @@ public class RobotPlayer extends Player {
             }
         });
 
-        int[] originIndexes = getIndexesFromSkipFaces(skipFace[0]);
+        List<Integer> originIndexesList = new ArrayList<>();
+
+        for (int i = 0; i < cards.length; i++) {
+            if(cards[i].getFace().getFace().equals(skipFace[0])){
+                originIndexesList.add(i);
+            }
+        }
+        int[] originIndexes = originIndexesList.stream().mapToInt(Integer::intValue).toArray();
 
         //抽牌
         changeCard(getRandomPlayer(players, currentPlayerIndex), getRandomIndexes(originIndexes.length), originIndexes);
