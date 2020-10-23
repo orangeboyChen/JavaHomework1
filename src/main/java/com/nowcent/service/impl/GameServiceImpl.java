@@ -8,6 +8,7 @@ import com.nowcent.service.DeckOfCards;
 import com.nowcent.service.GameService;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author orangeboy
@@ -153,6 +154,7 @@ public class GameServiceImpl implements GameService {
 
         //战绩提示
         if(gameTotal >= 2){
+            players = Arrays.stream(players).sorted((a, b) -> b.getWinCount() - a.getWinCount()).collect(Collectors.toList()).toArray(new Player[1]);
             System.out.println("\n\n=============");
             System.out.println("你赢了" + currentPlayer.getWinCount() + "/" + gameTotal + "局游戏");
             System.out.println("=============");
