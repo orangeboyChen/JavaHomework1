@@ -32,7 +32,7 @@ public class DeckOfCardsImpl implements DeckOfCards {
 
     private DeckOfCardsImpl() {
         for ( int count = 0; count < deck.length; count++ ){
-            deck[count] = new Card(Face.class.getEnumConstants()[count % 13], Suit.class.getEnumConstants()[count / 13]);
+            deck[count] = new Card(Card.Face.class.getEnumConstants()[count % 13], Card.Suit.class.getEnumConstants()[count / 13]);
         }
         currentCard = 0;
     }

@@ -21,43 +21,6 @@ public interface DeckOfCards {
      */
     Card dealCard();
 
-    /**
-     * 卡牌点数
-     */
-    @AllArgsConstructor
-    @Getter
-    enum Face{
-        A(1, "A"),
-        NUM2(2, "2"),
-        NUM3(3, "3"),
-        NUM4(4, "4"),
-        NUM5(5, "5"),
-        NUM6(6, "6"),
-        NUM7(7, "7"),
-        NUM8(8, "8"),
-        NUM9(9, "9"),
-        NUM10(10, "10"),
-        J(11, "J"),
-        Q(12, "Q"),
-        K(13, "K");
-
-        private int index;
-        private String face;
-    }
-
-    /**
-     * 卡牌花色
-     */
-    @AllArgsConstructor
-    @Getter
-    enum Suit{
-        红桃(0),
-        方块(1),
-        梅花(2),
-        黑桃(3);
-
-        private int index;
-    }
 
 
 }
